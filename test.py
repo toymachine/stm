@@ -1,3 +1,7 @@
+import _stm
+
+_stm.test()
+
 import opcode
 
 from stm import persistent, world
@@ -61,6 +65,6 @@ def run(code_object):
         print (i_offset, i_opcode, opcode.opname[i_opcode], i_argument, i_arg_type, i_arg_value)
 
 
-run(sum.func_code)
+#run(sum.func_code)
 
 
