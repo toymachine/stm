@@ -1,7 +1,7 @@
-cdef extern from "stdlib.h":
-     void free(void* ptr)
-     void* malloc(size_t size)
-     void* realloc(void* ptr, size_t size)
+cdef extern from "mm.h":
+     void stm_init()
+     void* stm_malloc(size_t size)
+     void* stm_realloc(void* ptr, size_t size)
 
 cdef class Persistent:
      cdef blaat(self):
@@ -19,5 +19,12 @@ cdef class PersistentVector(Persistent):
           if self.tail_length < 32:
              pass
 
+def init():
+    stm_init()
+    print "stm initted"
+
 def test():
-    print sizeof(PersistentVector)
+    while True:
+        stm_malloc(sizeof(PersistentVector))
+
+init()

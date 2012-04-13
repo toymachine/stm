@@ -1,6 +1,6 @@
 PYTHON=python2.7
 
-build: _stm.pyx
+build: _stm.pyx mm.h
 	python setup.py build_ext --inplace
 
 clean:
