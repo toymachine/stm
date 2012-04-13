@@ -31,3 +31,4 @@ ctags
 .grepcache*
 lint.txt
 *.so
+gc
